@@ -1,0 +1,333 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\ApiAcademiaNet\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{76305BCB-3473-4F87-BAA8-042084B2F51D}|..\\AcademiaWeb\\AcademiaWeb.csproj|c:\\users\\agust\u00EDn.desktop-o9nve39\\desktop\\facu2024\\net\\netacademia\\academiaweb\\academiaweb.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76305BCB-3473-4F87-BAA8-042084B2F51D}|..\\AcademiaWeb\\AcademiaWeb.csproj|c:\\users\\agust\u00EDn.desktop-o9nve39\\desktop\\facu2024\\net\\netacademia\\academiaweb\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76305BCB-3473-4F87-BAA8-042084B2F51D}|..\\AcademiaWeb\\AcademiaWeb.csproj|c:\\users\\agust\u00EDn.desktop-o9nve39\\desktop\\facu2024\\net\\netacademia\\academiaweb\\wwwroot\\css\\gestiondocente.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76305BCB-3473-4F87-BAA8-042084B2F51D}|..\\AcademiaWeb\\AcademiaWeb.csproj|c:\\users\\agust\u00EDn.desktop-o9nve39\\desktop\\facu2024\\net\\netacademia\\academiaweb\\wwwroot\\css\\cursos.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76305BCB-3473-4F87-BAA8-042084B2F51D}|..\\AcademiaWeb\\AcademiaWeb.csproj|c:\\users\\agust\u00EDn.desktop-o9nve39\\desktop\\facu2024\\net\\netacademia\\academiaweb\\wwwroot\\css\\inscripcioncurso.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76305BCB-3473-4F87-BAA8-042084B2F51D}|..\\AcademiaWeb\\AcademiaWeb.csproj|c:\\users\\agust\u00EDn.desktop-o9nve39\\desktop\\facu2024\\net\\netacademia\\academiaweb\\wwwroot\\css\\inscripcionfinal.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76305BCB-3473-4F87-BAA8-042084B2F51D}|..\\AcademiaWeb\\AcademiaWeb.csproj|c:\\users\\agust\u00EDn.desktop-o9nve39\\desktop\\facu2024\\net\\netacademia\\academiaweb\\pages\\docente\\actualizarcondicion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76305BCB-3473-4F87-BAA8-042084B2F51D}|..\\AcademiaWeb\\AcademiaWeb.csproj|c:\\users\\agust\u00EDn.desktop-o9nve39\\desktop\\facu2024\\net\\netacademia\\academiaweb\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76305BCB-3473-4F87-BAA8-042084B2F51D}|..\\AcademiaWeb\\AcademiaWeb.csproj|c:\\users\\agust\u00EDn.desktop-o9nve39\\desktop\\facu2024\\net\\netacademia\\academiaweb\\pages\\nodocente\\homenodocente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76305BCB-3473-4F87-BAA8-042084B2F51D}|..\\AcademiaWeb\\AcademiaWeb.csproj|c:\\users\\agust\u00EDn.desktop-o9nve39\\desktop\\facu2024\\net\\netacademia\\academiaweb\\pages\\nodocente\\gestiondocente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF6CF039-E2B8-4FE6-BF79-B910BD373817}|..\\AcademiaDesktop\\AcademiaDesktop.csproj|c:\\users\\agust\u00EDn.desktop-o9nve39\\desktop\\facu2024\\net\\netacademia\\academiadesktop\\docente\\condicionalumnos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76305BCB-3473-4F87-BAA8-042084B2F51D}|..\\AcademiaWeb\\AcademiaWeb.csproj|c:\\users\\agust\u00EDn.desktop-o9nve39\\desktop\\facu2024\\net\\netacademia\\academiaweb\\pages\\alumno\\inscripcioncurso.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76305BCB-3473-4F87-BAA8-042084B2F51D}|..\\AcademiaWeb\\AcademiaWeb.csproj|c:\\users\\agust\u00EDn.desktop-o9nve39\\desktop\\facu2024\\net\\netacademia\\academiaweb\\pages\\alumno\\inscripcionfinal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76305BCB-3473-4F87-BAA8-042084B2F51D}|..\\AcademiaWeb\\AcademiaWeb.csproj|c:\\users\\agust\u00EDn.desktop-o9nve39\\desktop\\facu2024\\net\\netacademia\\academiaweb\\pages\\alumno\\homealumno.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76305BCB-3473-4F87-BAA8-042084B2F51D}|..\\AcademiaWeb\\AcademiaWeb.csproj|c:\\users\\agust\u00EDn.desktop-o9nve39\\desktop\\facu2024\\net\\netacademia\\academiaweb\\pages\\nodocente\\gestionalumno.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76305BCB-3473-4F87-BAA8-042084B2F51D}|..\\AcademiaWeb\\AcademiaWeb.csproj|c:\\users\\agust\u00EDn.desktop-o9nve39\\desktop\\facu2024\\net\\netacademia\\academiaweb\\pages\\docente\\homedocente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76305BCB-3473-4F87-BAA8-042084B2F51D}|..\\AcademiaWeb\\AcademiaWeb.csproj|c:\\users\\agust\u00EDn.desktop-o9nve39\\desktop\\facu2024\\net\\netacademia\\academiaweb\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF6CF039-E2B8-4FE6-BF79-B910BD373817}|..\\AcademiaDesktop\\AcademiaDesktop.csproj|c:\\users\\agust\u00EDn.desktop-o9nve39\\desktop\\facu2024\\net\\netacademia\\academiadesktop\\alumno\\inscripcionfinal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76305BCB-3473-4F87-BAA8-042084B2F51D}|..\\AcademiaWeb\\AcademiaWeb.csproj|c:\\users\\agust\u00EDn.desktop-o9nve39\\desktop\\facu2024\\net\\netacademia\\academiaweb\\pages\\alumno\\cursos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AcademiaWeb",
+              "DocumentMoniker": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\AcademiaWeb.csproj",
+              "RelativeDocumentMoniker": "..\\AcademiaWeb\\AcademiaWeb.csproj",
+              "ToolTip": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\AcademiaWeb.csproj",
+              "RelativeToolTip": "..\\AcademiaWeb\\AcademiaWeb.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-14T01:05:30.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GestionDocente.css",
+              "DocumentMoniker": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\wwwroot\\css\\GestionDocente.css",
+              "RelativeDocumentMoniker": "..\\AcademiaWeb\\wwwroot\\css\\GestionDocente.css",
+              "ToolTip": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\wwwroot\\css\\GestionDocente.css",
+              "RelativeToolTip": "..\\AcademiaWeb\\wwwroot\\css\\GestionDocente.css",
+              "ViewState": "AQIAAH4AAAAAAAAAAAAwwIcAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-12T21:47:36.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Cursos.css",
+              "DocumentMoniker": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\wwwroot\\css\\Cursos.css",
+              "RelativeDocumentMoniker": "..\\AcademiaWeb\\wwwroot\\css\\Cursos.css",
+              "ToolTip": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\wwwroot\\css\\Cursos.css",
+              "RelativeToolTip": "..\\AcademiaWeb\\wwwroot\\css\\Cursos.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-12T21:47:05.402Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InscripcionCurso.css",
+              "DocumentMoniker": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\wwwroot\\css\\InscripcionCurso.css",
+              "RelativeDocumentMoniker": "..\\AcademiaWeb\\wwwroot\\css\\InscripcionCurso.css",
+              "ToolTip": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\wwwroot\\css\\InscripcionCurso.css",
+              "RelativeToolTip": "..\\AcademiaWeb\\wwwroot\\css\\InscripcionCurso.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-12T21:47:01.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.css",
+              "DocumentMoniker": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\wwwroot\\css\\Login.css",
+              "RelativeDocumentMoniker": "..\\AcademiaWeb\\wwwroot\\css\\Login.css",
+              "ToolTip": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\wwwroot\\css\\Login.css",
+              "RelativeToolTip": "..\\AcademiaWeb\\wwwroot\\css\\Login.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-12T21:46:34.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ActualizarCondicion.cshtml",
+              "DocumentMoniker": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\Docente\\ActualizarCondicion.cshtml",
+              "RelativeDocumentMoniker": "..\\AcademiaWeb\\Pages\\Docente\\ActualizarCondicion.cshtml",
+              "ToolTip": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\Docente\\ActualizarCondicion.cshtml",
+              "RelativeToolTip": "..\\AcademiaWeb\\Pages\\Docente\\ActualizarCondicion.cshtml",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAgwHEAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T20:29:09.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\Login.cshtml",
+              "RelativeDocumentMoniker": "..\\AcademiaWeb\\Pages\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\Login.cshtml",
+              "RelativeToolTip": "..\\AcademiaWeb\\Pages\\Login.cshtml",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAACgAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T20:42:25.823Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HomeNoDocente.cshtml",
+              "DocumentMoniker": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\NoDocente\\HomeNoDocente.cshtml",
+              "RelativeDocumentMoniker": "..\\AcademiaWeb\\Pages\\NoDocente\\HomeNoDocente.cshtml",
+              "ToolTip": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\NoDocente\\HomeNoDocente.cshtml",
+              "RelativeToolTip": "..\\AcademiaWeb\\Pages\\NoDocente\\HomeNoDocente.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T20:26:44.574Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "InscripcionFinal.css",
+              "DocumentMoniker": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\wwwroot\\css\\InscripcionFinal.css",
+              "RelativeDocumentMoniker": "..\\AcademiaWeb\\wwwroot\\css\\InscripcionFinal.css",
+              "ToolTip": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\wwwroot\\css\\InscripcionFinal.css",
+              "RelativeToolTip": "..\\AcademiaWeb\\wwwroot\\css\\InscripcionFinal.css",
+              "ViewState": "AQIAACcAAAAAAAAAAAAgwEAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-12T14:41:24.042Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GestionDocente.cshtml",
+              "DocumentMoniker": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\NoDocente\\GestionDocente.cshtml",
+              "RelativeDocumentMoniker": "..\\AcademiaWeb\\Pages\\NoDocente\\GestionDocente.cshtml",
+              "ToolTip": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\NoDocente\\GestionDocente.cshtml",
+              "RelativeToolTip": "..\\AcademiaWeb\\Pages\\NoDocente\\GestionDocente.cshtml",
+              "ViewState": "AQIAAGAAAAAAAAAAAAApwG4AAABeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T17:53:48.627Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CondicionAlumnos.cs",
+              "DocumentMoniker": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaDesktop\\Docente\\CondicionAlumnos.cs",
+              "RelativeDocumentMoniker": "..\\AcademiaDesktop\\Docente\\CondicionAlumnos.cs",
+              "ToolTip": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaDesktop\\Docente\\CondicionAlumnos.cs",
+              "RelativeToolTip": "..\\AcademiaDesktop\\Docente\\CondicionAlumnos.cs",
+              "ViewState": "AQIAAMYAAAAAAAAAAAAQwNEAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T20:35:38.639Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "InscripcionCurso.cshtml",
+              "DocumentMoniker": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\Alumno\\InscripcionCurso.cshtml",
+              "RelativeDocumentMoniker": "..\\AcademiaWeb\\Pages\\Alumno\\InscripcionCurso.cshtml",
+              "ToolTip": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\Alumno\\InscripcionCurso.cshtml",
+              "RelativeToolTip": "..\\AcademiaWeb\\Pages\\Alumno\\InscripcionCurso.cshtml",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAEMAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T21:01:41.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "HomeAlumno.cshtml",
+              "DocumentMoniker": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\Alumno\\HomeAlumno.cshtml",
+              "RelativeDocumentMoniker": "..\\AcademiaWeb\\Pages\\Alumno\\HomeAlumno.cshtml",
+              "ToolTip": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\Alumno\\HomeAlumno.cshtml",
+              "RelativeToolTip": "..\\AcademiaWeb\\Pages\\Alumno\\HomeAlumno.cshtml",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAC4AAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T19:59:14.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "GestionAlumno.cshtml",
+              "DocumentMoniker": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\NoDocente\\GestionAlumno.cshtml",
+              "RelativeDocumentMoniker": "..\\AcademiaWeb\\Pages\\NoDocente\\GestionAlumno.cshtml",
+              "ToolTip": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\NoDocente\\GestionAlumno.cshtml",
+              "RelativeToolTip": "..\\AcademiaWeb\\Pages\\NoDocente\\GestionAlumno.cshtml",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T20:52:33.492Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "InscripcionFinal.cshtml",
+              "DocumentMoniker": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\Alumno\\InscripcionFinal.cshtml",
+              "RelativeDocumentMoniker": "..\\AcademiaWeb\\Pages\\Alumno\\InscripcionFinal.cshtml",
+              "ToolTip": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\Alumno\\InscripcionFinal.cshtml",
+              "RelativeToolTip": "..\\AcademiaWeb\\Pages\\Alumno\\InscripcionFinal.cshtml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACsAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-11T23:13:27.661Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "HomeDocente.cshtml",
+              "DocumentMoniker": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\Docente\\HomeDocente.cshtml",
+              "RelativeDocumentMoniker": "..\\AcademiaWeb\\Pages\\Docente\\HomeDocente.cshtml",
+              "ToolTip": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\Docente\\HomeDocente.cshtml",
+              "RelativeToolTip": "..\\AcademiaWeb\\Pages\\Docente\\HomeDocente.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAAcAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T20:25:43.974Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "..\\AcademiaWeb\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "..\\AcademiaWeb\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAABAAAAAAAAAAAAAYwB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T15:14:52.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "InscripcionFinal.cs",
+              "DocumentMoniker": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaDesktop\\Alumno\\InscripcionFinal.cs",
+              "RelativeDocumentMoniker": "..\\AcademiaDesktop\\Alumno\\InscripcionFinal.cs",
+              "ToolTip": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaDesktop\\Alumno\\InscripcionFinal.cs",
+              "RelativeToolTip": "..\\AcademiaDesktop\\Alumno\\InscripcionFinal.cs",
+              "ViewState": "AQIAAAkBAAAAAAAAAAA8wA8BAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T23:16:49.705Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Cursos.cshtml",
+              "DocumentMoniker": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\Alumno\\Cursos.cshtml",
+              "RelativeDocumentMoniker": "..\\AcademiaWeb\\Pages\\Alumno\\Cursos.cshtml",
+              "ToolTip": "C:\\Users\\Agust\u00EDn.DESKTOP-O9NVE39\\Desktop\\Facu2024\\Net\\NetAcademia\\AcademiaWeb\\Pages\\Alumno\\Cursos.cshtml",
+              "RelativeToolTip": "..\\AcademiaWeb\\Pages\\Alumno\\Cursos.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAACsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T15:12:06.003Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

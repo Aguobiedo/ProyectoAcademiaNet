@@ -1,0 +1,189 @@
+﻿@page
+@model AcademiaWeb.Pages.Alumno.InscripcionFinalModel
+
+@{
+    ViewData["Title"] = "Inscripción a Final";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/InscripcionFinal.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+
+</head>
+<body>
+
+    <h1>Inscripciones</h1>
+
+    <table id="inscripcionesTable" class="table">
+        <thead>
+            <tr>
+                <th>Materia</th>
+                <th>Comisión</th>
+                <th>Condición</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+     
+        <tbody>
+            <!-- Las inscripciones se cargarán dinámicamente desde JavaScript -->
+        </tbody>
+    </table>
+
+    <button onclick="volver()">Volver</button>
+
+    @section Scripts {
+        <script>
+    async function cargarInscripciones() {
+        try {
+            const idPersona = localStorage.getItem('IdPersona');
+            if (!idPersona) {
+                alert("No se encontró el ID de la persona en el almacenamiento local.");
+                return;
+            }
+
+            const response = await fetch(`https://localhost:7090/api/AlumnoInscripcion/persona/${idPersona}`);
+
+            if (!response.ok) {
+                console.error("Error al cargar inscripciones:", response.statusText);
+                alert("Error al cargar inscripciones: " + response.statusText);
+                return;
+            }
+
+            const inscripciones = await response.json();
+            const tableBody = document.querySelector("#inscripcionesTable tbody");
+            tableBody.innerHTML = "";
+
+            // Crear promesas para obtener datos de los cursos
+            const cursoPromises = inscripciones.map(inscripcion =>
+                fetch(`https://localhost:7090/api/Curso/${inscripcion.idCurso}`)
+                    .then(cursoResponse => {
+                        if (!cursoResponse.ok) {
+                            console.warn(`No se encontraron datos para el curso con ID: ${inscripcion.idCurso}`);
+                            return null; // Retornar null si falla
+                        }
+                        return cursoResponse.json();
+                    })
+                    .then(cursoData => ({ inscripcion, cursoData }))
+            );
+
+            const resultados = await Promise.all(cursoPromises);
+
+            let tieneRegular = false;
+            resultados.forEach(({ inscripcion, cursoData }) => {
+                if (!cursoData) return; // Ignorar si no hay datos del curso
+
+                const materia = cursoData.materia?.descMateria || "Sin asignar";
+                const comision = cursoData.comision?.descComision || "Sin asignar";
+
+                console.log(`Condición recibida: ${inscripcion.condicion}`); // Verificar valor de la condición
+
+                if (inscripcion.condicion === "Regular") {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${materia}</td>
+                        <td>${comision}</td>
+                        <td>${inscripcion.condicion}</td>
+                        <td>
+                             <button class='btn btn-primary' onclick='actualizarInscripcion(${JSON.stringify(inscripcion)}, "${materia}", "${comision}")'>Inscribir a final</button>
+                        </td>`;
+                    tableBody.appendChild(row);
+
+                    tieneRegular = true;
+                }
+            });
+
+            if (!tieneRegular) alert("No tienes ninguna materia en condición 'Regular'");
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Ocurrió un error al cargar las inscripciones.");
+        }
+    }
+
+    async function actualizarInscripcion(inscripcion, materia, comision)  {
+        try {
+            const inscripcionActualizada = {
+                idInscripcion: inscripcion.idInscripcion,
+                fechaInscripcion: new Date().toISOString(),
+                condicion: "Inscripto en final",
+                nota: "Pendiente",
+                idPersona: inscripcion.idPersona,
+                idCurso: inscripcion.idCurso,
+                persona: null,
+                curso: null
+            };
+
+            const response = await fetch(`https://localhost:7090/api/AlumnoInscripcion/${inscripcion.idInscripcion}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(inscripcionActualizada),
+            });
+
+            if (response.ok) {
+                alert("Inscripto en el examen final. Descargando comprobante...");
+
+                const alumnoResponse = await fetch(`https://localhost:7090/api/Persona/${inscripcion.idPersona}`);
+                if (alumnoResponse.ok) {
+                    const result = await alumnoResponse.json();
+                    const alumno = result.data;
+                    const nombre = alumno.nombre;
+                    const apellido = alumno.apellido
+
+                    descargarComprobante(inscripcionActualizada, nombre, apellido, materia, comision);
+                    console.log("Persona: ", nombre);
+                    cargarInscripciones();
+                } else {
+                    console.error("Error al obtener los datos del alumno");
+                    alert("Error al obtener los datos del alumno");
+                }
+            } else {
+                console.error("Error al actualizar la inscripción");
+                alert("Error al inscribirse");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Ocurrió un error al inscribirse.");
+        }
+    }
+
+    async function descargarComprobante(inscripcion, nombre, apellido, materia, comision) {
+        // Carga el módulo jsPDF
+        const { jsPDF } = window.jspdf;
+        
+        const pdf = new jsPDF();
+
+        const fecha = new Date().toLocaleDateString();
+
+        const contenido = `
+          Comprobante de inscripción:
+          Nombre: ${nombre} ${apellido}
+          Materia: ${materia}
+          Comisión: ${comision}
+          Fecha: ${fecha}
+          `;
+
+        // Agrega texto al PDF
+        pdf.text(contenido, 10, 10);
+
+        // Descarga el archivo como PDF
+        pdf.save("comprobante.pdf");
+    }
+
+    cargarInscripciones();
+
+    function volver() {
+        window.location.href = '/Alumno/HomeAlumno';
+    }
+
+        </script>
+    }
+
+</body>
+</html>

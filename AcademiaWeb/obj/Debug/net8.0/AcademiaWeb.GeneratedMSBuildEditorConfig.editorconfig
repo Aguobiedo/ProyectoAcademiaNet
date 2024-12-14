@@ -1,0 +1,87 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AcademiaWeb
+build_property.RootNamespace = AcademiaWeb
+build_property.ProjectDir = C:\Users\Agustín.DESKTOP-O9NVE39\Desktop\Facu2024\Net\NetAcademia\AcademiaWeb\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Agustín.DESKTOP-O9NVE39\Desktop\Facu2024\Net\NetAcademia\AcademiaWeb
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Agustín.DESKTOP-O9NVE39/Desktop/Facu2024/Net/NetAcademia/AcademiaWeb/Pages/Alumno/Cursos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWx1bW5vXEN1cnNvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Agustín.DESKTOP-O9NVE39/Desktop/Facu2024/Net/NetAcademia/AcademiaWeb/Pages/Alumno/HomeAlumno.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWx1bW5vXEhvbWVBbHVtbm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Agustín.DESKTOP-O9NVE39/Desktop/Facu2024/Net/NetAcademia/AcademiaWeb/Pages/Alumno/InscripcionCurso.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWx1bW5vXEluc2NyaXBjaW9uQ3Vyc28uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Agustín.DESKTOP-O9NVE39/Desktop/Facu2024/Net/NetAcademia/AcademiaWeb/Pages/Alumno/InscripcionFinal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWx1bW5vXEluc2NyaXBjaW9uRmluYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Agustín.DESKTOP-O9NVE39/Desktop/Facu2024/Net/NetAcademia/AcademiaWeb/Pages/Docente/ActualizarCondicion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jZW50ZVxBY3R1YWxpemFyQ29uZGljaW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Agustín.DESKTOP-O9NVE39/Desktop/Facu2024/Net/NetAcademia/AcademiaWeb/Pages/Docente/HomeDocente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jZW50ZVxIb21lRG9jZW50ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Agustín.DESKTOP-O9NVE39/Desktop/Facu2024/Net/NetAcademia/AcademiaWeb/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Agustín.DESKTOP-O9NVE39/Desktop/Facu2024/Net/NetAcademia/AcademiaWeb/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Agustín.DESKTOP-O9NVE39/Desktop/Facu2024/Net/NetAcademia/AcademiaWeb/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Agustín.DESKTOP-O9NVE39/Desktop/Facu2024/Net/NetAcademia/AcademiaWeb/Pages/NoDocente/GestionAlumno.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm9Eb2NlbnRlXEdlc3Rpb25BbHVtbm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Agustín.DESKTOP-O9NVE39/Desktop/Facu2024/Net/NetAcademia/AcademiaWeb/Pages/NoDocente/GestionDocente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm9Eb2NlbnRlXEdlc3Rpb25Eb2NlbnRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Agustín.DESKTOP-O9NVE39/Desktop/Facu2024/Net/NetAcademia/AcademiaWeb/Pages/NoDocente/HomeNoDocente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm9Eb2NlbnRlXEhvbWVOb0RvY2VudGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Agustín.DESKTOP-O9NVE39/Desktop/Facu2024/Net/NetAcademia/AcademiaWeb/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Agustín.DESKTOP-O9NVE39/Desktop/Facu2024/Net/NetAcademia/AcademiaWeb/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Agustín.DESKTOP-O9NVE39/Desktop/Facu2024/Net/NetAcademia/AcademiaWeb/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Agustín.DESKTOP-O9NVE39/Desktop/Facu2024/Net/NetAcademia/AcademiaWeb/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Agustín.DESKTOP-O9NVE39/Desktop/Facu2024/Net/NetAcademia/AcademiaWeb/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-0duoy4doao

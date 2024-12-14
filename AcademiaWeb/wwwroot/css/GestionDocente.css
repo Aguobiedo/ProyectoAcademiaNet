@@ -1,0 +1,157 @@
+﻿
+/* Establece margen y padding a cero en el body y html */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+ 
+.header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative; /* Añadido para manejar cualquier manipulación de posición */
+    top: 0; /* Asegura que se posicione en la parte superior */
+    width: 100%; /* Asegura que ocupe todo el ancho de la página */
+}
+    .header h1 {
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    .header button {
+        background-color: #0056b3;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+        .header button:hover {
+            background-color: #003f7f;
+        }
+
+/* Content */
+.content {
+    padding: 20px;
+}
+
+.filters {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+    .filters input {
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 300px;
+    }
+
+    .filters button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .filters button:hover {
+            background-color: #218838;
+        }
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+    table thead {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    table th, table td {
+        text-align: left;
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    table th {
+        text-transform: uppercase;
+        font-size: 0.9rem;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    table tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    table td[contenteditable="true"] {
+        background-color: #e7f3ff;
+        border: 1px solid #cce7ff;
+    }
+
+    table td button {
+        padding: 5px 10px;
+        font-size: 0.9rem;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+        table td button:hover {
+            opacity: 0.9;
+        }
+
+        table td button:first-child {
+            background-color: #ffc107;
+            color: #fff;
+            margin-right: 5px;
+        }
+
+            table td button:first-child:hover {
+                background-color: #e0a800;
+            }
+
+        table td button:last-child {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+            table td button:last-child:hover {
+                background-color: #c82333;
+            }
+
+/* Add Button */
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #0056b3;
+    }

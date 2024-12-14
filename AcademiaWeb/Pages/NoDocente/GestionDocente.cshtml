@@ -1,0 +1,314 @@
+﻿@page
+@model AcademiaWeb.Pages.NoDocente.GestionDocenteModel
+@{
+    ViewData["Title"] = "Gestión de Docentes";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/GestionDocente.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Gestión de Docentes</h1>
+        <button onclick="window.location.href='/NoDocente/HomeNoDocente'">Volver al inicio</button>
+    </div>
+    <div class="content">
+        <div class="filters">
+            <input type="text" id="filtroNombre" placeholder="Filtrar por nombre" />
+            <button onclick="filtrarDocentes()">Filtrar</button>
+        </div>
+        <table id="tablaDocentes">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Dirección</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Legajo</th>
+                    <th>Clave</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se llenarán los docentes dinámicamente -->
+            </tbody>
+        </table>
+        <button onclick="nuevoDocente()">Agregar Docente</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            cargarDocentes();
+        });
+
+        async function cargarDocentes() {
+            try {
+                const response = await fetch('https://localhost:7090/api/Persona');
+                if (response.ok) {
+                    const data = await response.json();
+                    const docentes = data.data.filter(p => p.tipo === "Docente");
+                    const tbody = $('#tablaDocentes tbody');
+                    tbody.empty();
+
+                    docentes.forEach(docente => {
+                        tbody.append(`
+                            <tr data-id="${docente.idPersona}">
+                                <td contenteditable="true">${docente.nombre}</td>
+                                <td contenteditable="true">${docente.apellido}</td>
+                                <td contenteditable="true">${docente.direccion}</td>
+                                <td contenteditable="true">${docente.email}</td>
+                                <td contenteditable="true">${docente.telefono}</td>
+                                <td contenteditable="true">${docente.fechaNacimiento}</td>
+                                <td contenteditable="false">${docente.legajo}</td>
+                                <td contenteditable="true">${docente.clave}</td>
+                                <td>
+                                    <button onclick="actualizarDocente(${docente.idPersona})">Actualizar</button>
+                                    <button onclick="eliminarDocente(${docente.idPersona})">Eliminar</button>
+                                </td>
+                            </tr>
+                        `);
+                    });
+                } else {
+                    alert('Error al cargar los docentes.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        async function actualizarDocente(idPersona) {
+            const fila = $(`tr[data-id="${idPersona}"]`);
+            const clave = fila.find('td:nth-child(8)').text().trim();
+
+            if (!validarCampos(fila)) return;
+
+            const claveHash = await hashClave(clave);
+
+            const datos = {
+                idPersona,
+                nombre: fila.find('td:nth-child(1)').text().trim(),
+                apellido: fila.find('td:nth-child(2)').text().trim(),
+                direccion: fila.find('td:nth-child(3)').text().trim(),
+                email: fila.find('td:nth-child(4)').text().trim(),
+                telefono: fila.find('td:nth-child(5)').text().trim(),
+                fechaNacimiento: fila.find('td:nth-child(6)').text().trim(),
+                legajo: fila.find('td:nth-child(7)').text().trim(),
+                clave: claveHash,
+                tipo: "Docente",
+                idPlan: null,
+                plan: null
+            };
+
+            try {
+                const response = await fetch(`https://localhost:7090/api/Persona/${idPersona}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(datos)
+                });
+
+                if (response.ok) {
+                    alert('Docente actualizado correctamente.');
+                    cargarDocentes();
+                } else {
+                    alert('Error al actualizar el docente.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        async function validarLegajoExistente(legajo) {
+            try {
+                const response = await fetch('https://localhost:7090/api/Persona');
+                if (response.ok) {
+                    const data = await response.json();
+                    return data.data.some(docente => docente.legajo === legajo);
+                }
+            } catch (error) {
+                console.error('Error al validar legajo:', error);
+            }
+            return false;
+        }
+
+        async function nuevoDocente() {
+            const nombre = prompt("Ingrese el nombre:");
+            const apellido = prompt("Ingrese el apellido:");
+            const direccion = prompt("Ingrese la dirección:");
+            const email = prompt("Ingrese el email:");
+            const telefono = prompt("Ingrese el teléfono:");
+            const fechaNacimiento = await solicitarFechaNacimiento();
+            if (!fechaNacimiento) return;
+            const legajo = prompt("Ingrese el legajo:");
+            const clave = prompt("Ingrese la clave:");
+
+            if (!nombre || !apellido || !email || !telefono || !fechaNacimiento || !legajo || !clave) {
+                alert("Todos los campos son obligatorios.");
+                return;
+            }
+
+            // Validar si el legajo ya existe
+            const legajoExiste = await validarLegajoExistente(legajo);
+            if (legajoExiste) {
+                alert("El legajo ya existe. Por favor, ingrese un legajo diferente.");
+                return;
+            }
+
+            const claveHash = await hashClave(clave);
+
+            const datos = {
+                idPersona: 0,
+                nombre,
+                apellido,
+                direccion,
+                email,
+                telefono,
+                fechaNacimiento,
+                legajo,
+                clave: claveHash,
+                tipo: "Docente",
+                idPlan: null,
+                plan: null
+            };
+
+            try {
+                const response = await fetch('https://localhost:7090/api/Persona', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(datos)
+                });
+
+                if (response.ok) {
+                    alert('Docente agregado correctamente.');
+                    cargarDocentes();
+                } else {
+                    alert('Error al agregar el docente.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        async function hashClave(clave) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(clave);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            return Array.from(new Uint8Array(hashBuffer))
+                        .map(byte => byte.toString(16).padStart(2, '0'))
+                        .join('');
+        }
+
+        async function solicitarFechaNacimiento() {
+            return new Promise((resolve) => {
+                const wrapper = $('<div>').css({ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.5)', display: 'flex', justifyContent: 'center', alignItems: 'center' }).appendTo('body');
+                const dialog = $(`
+                            <div style="background: white; padding: 20px; border-radius: 10px; text-align: center;">
+                                <label for="fechaInput">Ingrese la fecha de nacimiento:</label>
+                                <input type="date" id="fechaInput" max="${obtenerFechaMaxima()}" />
+                                <button id="submitFecha">Aceptar</button>
+                                <button id="cancelFecha">Cancelar</button>
+                            </div>
+                        `).appendTo(wrapper);
+
+                $('#submitFecha').on('click', function () {
+                    const fecha = $('#fechaInput').val();
+                    if (validarFechaNacimiento(fecha)) {
+                        wrapper.remove();
+                        resolve(fecha);
+                    } else {
+                        alert('La fecha ingresada indica que el alumno no es mayor de 22 años. Por favor, ingrese una fecha válida.');
+                    }
+                });
+
+                $('#cancelFecha').on('click', function () {
+                    wrapper.remove();
+                    resolve(null);
+                });
+            });
+        }
+
+        function obtenerFechaMaxima() {
+            const hoy = new Date();
+            hoy.setFullYear(hoy.getFullYear() - 22);
+            return hoy.toISOString().split('T')[0];
+        }
+
+        function validarFechaNacimiento(fecha) {
+            if (!fecha) return false;
+            const hoy = new Date();
+            const fechaNacimiento = new Date(fecha);
+            const edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+            const diferenciaMes = hoy.getMonth() - fechaNacimiento.getMonth();
+            return edad > 22 || (edad === 22 && diferenciaMes >= 0);
+        }
+
+        function validarCampos(fila) {
+            const telefono = fila.find('td:nth-child(5)').text().trim();
+            const fechaNacimiento = fila.find('td:nth-child(6)').text().trim();
+
+            // Validación del teléfono
+            const telefonoRegex = /^\d{10}$/;
+            if (!telefonoRegex.test(telefono)) {
+                alert("Teléfono debe tener 10 dígitos.");
+                return false;
+            }
+
+ 
+            const fechaActual = new Date();
+            const fechaNacimientoDate = new Date(fechaNacimiento);
+
+            if (isNaN(fechaNacimientoDate)) {
+                alert("Fecha de nacimiento no válida.");
+                return false;
+            }
+
+            const edad = fechaActual.getFullYear() - fechaNacimientoDate.getFullYear();
+            const diferenciaMeses = fechaActual.getMonth() - fechaNacimientoDate.getMonth();
+            const diferenciaDias = fechaActual.getDate() - fechaNacimientoDate.getDate();
+
+            if (
+                edad < 22 ||
+                (edad === 22 && diferenciaMeses < 0) ||
+                (edad === 22 && diferenciaMeses === 0 && diferenciaDias < 0)
+            ) {
+                alert("La persona debe ser mayor de 22 años.");
+                return false;
+            }
+
+            return true;
+        }
+
+
+        function filtrarDocentes() {
+            const filtro = $('#filtroNombre').val().toLowerCase();
+            $('#tablaDocentes tbody tr').each(function () {
+                const nombre = $(this).find('td:nth-child(1)').text().toLowerCase();
+                $(this).toggle(nombre.includes(filtro));
+            });
+        }
+
+        async function eliminarDocente(idPersona) {
+            if (!confirm('¿Está seguro de que desea eliminar este docente?')) return;
+
+            try {
+                const response = await fetch(`https://localhost:7090/api/Persona/${idPersona}`, { method: 'DELETE' });
+                if (response.ok) {
+                    alert('Docente eliminado correctamente.');
+                    cargarDocentes();
+                } else {
+                    alert('Error al eliminar el docente.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+    </script>
+</body>
+</html>

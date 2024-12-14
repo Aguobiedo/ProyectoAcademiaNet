@@ -1,0 +1,35 @@
+﻿@page
+@model AcademiaWeb.Pages.Docente.HomeDocenteModel 
+ 
+@{
+    ViewData["Title"] = "HomeDocente";
+}
+
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Cursos</title>
+    <link rel="stylesheet" href="~/css/HomeAlumno.css" />
+</head>
+<body>
+    <div class="header">
+        <h1>Gestión Docentes</h1>
+        <button id="cerrarSesion" onclick="CerrarSesion()">Cerrar sesion</button>
+    </div>
+    <div class="actions">
+        <button onclick="window.location.href='/Docente/ActualizarCondicion'">Actualizar Condición</button>
+        
+   </div>
+    <script>
+
+        function CerrarSesion() {
+            localStorage.setItem("Token", null);
+            localStorage.setItem("IdPersona", null);
+            localStorage.setItem("Token", null);
+            alert('Sesión cerrada');
+            window.location.href = '/Login';
+        }
+    </script>
+</body>
+</html>

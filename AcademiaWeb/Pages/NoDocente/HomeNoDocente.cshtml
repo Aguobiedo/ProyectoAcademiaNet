@@ -1,0 +1,35 @@
+﻿@page
+@model AcademiaWeb.Pages.NoDocente.HomeNoDocenteModel
+ 
+@{
+    ViewData["Title"] = "HomeNoDocente";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Cursos</title>
+    <link rel="stylesheet" href="~/css/HomeAlumno.css" />
+</head>
+<body>
+    <div class="header">
+        <h1>Gestión de Alumnos - Docentes</h1>
+        <button id="cerrarSesion" onclick="CerrarSesion()">Cerrar sesion</button>
+    </div>
+    <div class="actions">
+        <button onclick="window.location.href='/NoDocente/GestionAlumno'">Gestión de Alumnos</button>
+        <button onclick="window.location.href='/NoDocente/GestionDocente'">Gestión de Docentes</button>
+   </div>
+    <script>
+
+        function CerrarSesion() {
+            localStorage.setItem("Token", null);
+            localStorage.setItem("IdPersona", null);
+            localStorage.setItem("Token", null);
+            alert('Sesión cerrada');
+            window.location.href = '/Login';
+        }
+    </script>
+</body>
+</html>

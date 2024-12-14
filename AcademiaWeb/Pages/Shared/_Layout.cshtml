@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AcademiaWeb</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AcademiaWeb.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="invisible-links">
+    <style>
+        .invisible-links {
+            display: none; /* Oculta completamente el contenido */
+        }
+    </style>
+    <a asp-page="/Login"> </a>
+    <a class="nav-link text-dark" asp-area="" asp-page="/Login"> </a>
+    <a class="nav-link text-dark" asp-area="" asp-page="/Alumno/HomeAlumno"> </a>
+    <a class="nav-link text-dark" asp-area="" asp-page="/Alumno/Cursos"> </a>
+    <a class="nav-link text-dark" asp-area="" asp-page="/Alumno/InscripcionCurso"> </a>
+    <a class="nav-link text-dark" asp-area="" asp-page="/NoDocente/HomeNoDocente"> </a>
+    <a class="nav-link text-dark" asp-area="" asp-page="/NoDocente/GestionDocente"> </a>
+    <a class="nav-link text-dark" asp-area="" asp-page="/NoDocente/GestionAlumno"> </a>
+    <a class="nav-link text-dark" asp-area="" asp-page="/Alumno/InscripcionFinal"> </a>
+     <a class="nav-link text-dark" asp-area="" asp-page="/Docente/HomeDocente"> </a>
+     <a class="nav-link text-dark" asp-area="" asp-page="/Docente/ActualizarCondicion"> </a>
+</div>
+
+               
+    <!-- Esto es donde se renderiza el contenido específico de cada página -->
+    @RenderBody()
+
+    <footer>
+      
+    </footer>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

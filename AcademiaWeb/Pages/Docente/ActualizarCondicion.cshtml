@@ -1,0 +1,133 @@
+﻿@page
+@model AcademiaWeb.Pages.Docente.ActualizarCondicionModel
+@{
+    ViewData["Title"] = "Actualizar Cursos";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Inscripción a Cursos</title>
+    <link rel="stylesheet" href="~/css/InscripcionCurso.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+</head>
+<body>
+    <div>
+        <button onclick="volver()">Volver</button>
+        <h2>Actualizar Condición</h2>
+
+        <table id="tablaInscripciones" border="1">
+            <thead>
+                <tr>
+                    <th>ID Inscripción</th>
+                    <th>Alumno</th>
+                    <th>Materia</th>
+                    <th>Comisión</th>
+                    <th>Nota</th>
+                    <th>Condición</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Las filas se cargarán dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const API_BASE_URL = "https://localhost:7090/api";
+        const idPersona = localStorage.getItem('IdPersona');
+
+        console.log("PERSONA: ", idPersona);
+
+        async function cargarCursos() {
+            try {
+                const responseCursos = await axios.get(`${API_BASE_URL}/DocenteCurso/Persona/cursos/${idPersona}`);
+                const arrayCursos = responseCursos.data;
+
+                if (!arrayCursos || arrayCursos.length === 0) {
+                    alert("No se encontraron cursos para la persona.");
+                    return;
+                }
+
+                const responseInscripciones = await axios.post(`${API_BASE_URL}/AlumnoInscripcion/CursosArray`, arrayCursos);
+                const inscripciones = responseInscripciones.data;
+
+                if (inscripciones && inscripciones.length > 0) {
+                    const tbody = document.getElementById("tablaInscripciones").querySelector("tbody");
+                    tbody.innerHTML = ""; // Limpiar filas anteriores
+
+                    for (const inscripcion of inscripciones) {
+                        const alumnoResponse = await axios.get(`${API_BASE_URL}/Persona/${inscripcion.idPersona}`);
+                        const alumnoData = alumnoResponse.data?.data;
+                        const nombreAlumno = `${alumnoData.nombre} ${alumnoData.apellido}`;
+
+                        const cursoResponse = await axios.get(`${API_BASE_URL}/Curso/${inscripcion.idCurso}`);
+                        const cursoData = cursoResponse.data;
+
+                        const fila = document.createElement("tr");
+                        fila.innerHTML = `
+                            <td>${inscripcion.idInscripcion}</td>
+                            <td>${nombreAlumno}</td>
+                            <td>${cursoData.materia.descMateria}</td>
+                            <td>${cursoData.comision.descComision}</td>
+                            <td>${inscripcion.nota}</td>
+                            <td>${inscripcion.condicion}</td>
+                            <td><button onclick='editarCondicion(${JSON.stringify(inscripcion)})'>Actualizar</button></td>
+                        `;
+                        tbody.appendChild(fila);
+                    }
+                } else {
+                    alert("No se encontraron inscripciones para los cursos proporcionados.");
+                }
+            } catch (error) {
+                console.error("Error al cargar los cursos: ", error);
+                alert("Ocurrió un error al cargar los cursos.");
+            }
+        }
+
+        async function editarCondicion(inscripcion) {
+            try {
+                const nuevaCondicion = prompt("Ingrese la nueva condición:", inscripcion.condicion);
+                const nuevaNota = prompt("Ingrese la nueva nota:", inscripcion.nota);
+                if (!nuevaCondicion) return;
+
+                // Construcción explícita del objeto que se enviará al backend
+                const inscripcionActualizada = {
+                    idInscripcion: inscripcion.idInscripcion,
+                    fechaInscripcion: inscripcion.fechaInscripcion,
+                    condicion: nuevaCondicion,
+                    nota: nuevaNota || "",
+                    idPersona: inscripcion.idPersona,
+                    idCurso: inscripcion.idCurso,
+                    persona: null,
+                    curso: null
+                };
+
+                console.log("Datos enviados:", inscripcionActualizada);
+
+                const responseUpdate = await axios.put(`${API_BASE_URL}/AlumnoInscripcion/${inscripcionActualizada.idInscripcion}`, inscripcionActualizada);
+                 
+                if (responseUpdate.status === 204) {
+                    alert("Inscripción actualizada correctamente.");
+                    cargarCursos();  
+                } else {
+                    alert("Error al actualizar la inscripción.");
+                }
+            } catch (error) {
+                console.error("Error al guardar la actualización: ", error);
+                alert("Ocurrió un error al actualizar la inscripción.");
+            }
+        }
+
+        function volver() {
+            window.location.href = '/Docente/HomeDocente';
+        }
+
+        // Cargar los cursos al iniciar la página
+        cargarCursos();
+    </script>
+</body>
+</html>
+

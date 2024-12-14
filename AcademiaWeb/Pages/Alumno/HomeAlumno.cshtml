@@ -1,0 +1,79 @@
+﻿@page
+@{
+    ViewData["Title"] = "Home Alumno";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/HomeAlumno.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Bienvenido al sistema académico - Alumno</h1>
+        <button id="logoutButton" onclick="cerrarSesion()">Cerrar sesión</button>
+    </div>
+    <div id="datosAlumno" class="content">
+        <p>Cargando información...</p>
+    </div>
+    <div class="actions">
+        <button onclick="window.location.href='/Alumno/Cursos'">Mis cursos</button>
+        <button onclick="window.location.href='/Alumno/InscripcionFinal'">Rendir una materia</button>
+        <button onclick="navegar('VerNotas')">Ver Notas</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            cargarDatosAlumno();
+        });
+
+        async function cargarDatosAlumno() {
+            const idPersona = localStorage.getItem('IdPersona');
+            const token = localStorage.getItem('Token');
+            try {
+                const response = await fetch(`https://localhost:7090/api/Persona/${idPersona}`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Accept': '*/*'
+                    }
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    const alumno = result.data;
+                    $('#datosAlumno').html(`
+                                <p><strong>Nombre:</strong> ${alumno.nombre} <strong>Apellido:</strong> ${alumno.apellido}</p>
+                                <p><strong>Legajo:</strong> ${alumno.legajo}</p>
+                                <p><strong>Dirección:</strong> ${alumno.direccion}</p>
+                                <p><strong>Email:</strong> ${alumno.email}</p>
+                                <p><strong>Plan:</strong> ${alumno.idPlan}</p>
+                            `);
+                    localStorage.setItem("IdPlan", alumno.idPlan);
+                } else {
+                    $('#datosAlumno').html('<p>Error al cargar los datos del alumno.</p>');
+                }
+            } catch (error) {
+                $('#datosAlumno').html('<p>Ocurrió un error al cargar los datos del alumno.</p>');
+                console.error('Error:', error);
+            }
+        }
+
+        function cerrarSesion() {
+            localStorage.setItem("Token", null);
+            localStorage.setItem("IdPersona", null);
+            localStorage.setItem("IdPlan", null);
+            alert('Sesión cerrada');
+            window.location.href = '/Login';
+        }
+
+        function navegar(ruta) {
+            window.location.href = `/${ruta}`;
+        }
+    </script>
+</body>
+</html>

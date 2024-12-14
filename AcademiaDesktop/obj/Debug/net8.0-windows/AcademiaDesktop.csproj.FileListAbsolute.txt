@@ -1,0 +1,16 @@
+C:\Users\Agustín.DESKTOP-O9NVE39\Desktop\FACULTAD\CARPETA 2\Electivas\.net 2024\Proyecto\AcademiaDesktop\bin\Debug\net8.0-windows\AcademiaDesktop.exe
+C:\Users\Agustín.DESKTOP-O9NVE39\Desktop\FACULTAD\CARPETA 2\Electivas\.net 2024\Proyecto\AcademiaDesktop\bin\Debug\net8.0-windows\AcademiaDesktop.deps.json
+C:\Users\Agustín.DESKTOP-O9NVE39\Desktop\FACULTAD\CARPETA 2\Electivas\.net 2024\Proyecto\AcademiaDesktop\bin\Debug\net8.0-windows\AcademiaDesktop.runtimeconfig.json
+C:\Users\Agustín.DESKTOP-O9NVE39\Desktop\FACULTAD\CARPETA 2\Electivas\.net 2024\Proyecto\AcademiaDesktop\bin\Debug\net8.0-windows\AcademiaDesktop.dll
+C:\Users\Agustín.DESKTOP-O9NVE39\Desktop\FACULTAD\CARPETA 2\Electivas\.net 2024\Proyecto\AcademiaDesktop\bin\Debug\net8.0-windows\AcademiaDesktop.pdb
+C:\Users\Agustín.DESKTOP-O9NVE39\Desktop\FACULTAD\CARPETA 2\Electivas\.net 2024\Proyecto\AcademiaDesktop\obj\Debug\net8.0-windows\AcademiaDesktop.Form1.resources
+C:\Users\Agustín.DESKTOP-O9NVE39\Desktop\FACULTAD\CARPETA 2\Electivas\.net 2024\Proyecto\AcademiaDesktop\obj\Debug\net8.0-windows\AcademiaDesktop.csproj.GenerateResource.cache
+C:\Users\Agustín.DESKTOP-O9NVE39\Desktop\FACULTAD\CARPETA 2\Electivas\.net 2024\Proyecto\AcademiaDesktop\obj\Debug\net8.0-windows\AcademiaDesktop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Agustín.DESKTOP-O9NVE39\Desktop\FACULTAD\CARPETA 2\Electivas\.net 2024\Proyecto\AcademiaDesktop\obj\Debug\net8.0-windows\AcademiaDesktop.AssemblyInfoInputs.cache
+C:\Users\Agustín.DESKTOP-O9NVE39\Desktop\FACULTAD\CARPETA 2\Electivas\.net 2024\Proyecto\AcademiaDesktop\obj\Debug\net8.0-windows\AcademiaDesktop.AssemblyInfo.cs
+C:\Users\Agustín.DESKTOP-O9NVE39\Desktop\FACULTAD\CARPETA 2\Electivas\.net 2024\Proyecto\AcademiaDesktop\obj\Debug\net8.0-windows\AcademiaDesktop.csproj.CoreCompileInputs.cache
+C:\Users\Agustín.DESKTOP-O9NVE39\Desktop\FACULTAD\CARPETA 2\Electivas\.net 2024\Proyecto\AcademiaDesktop\obj\Debug\net8.0-windows\AcademiaDesktop.dll
+C:\Users\Agustín.DESKTOP-O9NVE39\Desktop\FACULTAD\CARPETA 2\Electivas\.net 2024\Proyecto\AcademiaDesktop\obj\Debug\net8.0-windows\refint\AcademiaDesktop.dll
+C:\Users\Agustín.DESKTOP-O9NVE39\Desktop\FACULTAD\CARPETA 2\Electivas\.net 2024\Proyecto\AcademiaDesktop\obj\Debug\net8.0-windows\AcademiaDesktop.pdb
+C:\Users\Agustín.DESKTOP-O9NVE39\Desktop\FACULTAD\CARPETA 2\Electivas\.net 2024\Proyecto\AcademiaDesktop\obj\Debug\net8.0-windows\AcademiaDesktop.genruntimeconfig.cache
+C:\Users\Agustín.DESKTOP-O9NVE39\Desktop\FACULTAD\CARPETA 2\Electivas\.net 2024\Proyecto\AcademiaDesktop\obj\Debug\net8.0-windows\ref\AcademiaDesktop.dll

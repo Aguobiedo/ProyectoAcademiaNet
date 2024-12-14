@@ -1,0 +1,92 @@
+﻿@page
+@model AcademiaWeb.Pages.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="~/css/Login.css" />
+</head>
+<body>
+    
+    <div class="login-container">
+        <h2>Bienvenido a Academia Net</h2>
+        <h3>Iniciar Sesión</h3>
+        <form id="loginForm">
+            <input type="text" id="legajo" name="legajo" placeholder="Legajo" required />
+            <input type="password" id="clave" name="clave" placeholder="Clave" required />
+            <button type="submit">Ingresar</button>
+            <a href="#">¿Olvidaste tu contraseña?</a>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", async function (event) {
+            event.preventDefault(); // Previene el comportamiento por defecto del formulario (submit)
+
+            // Obtén los valores de los campos
+            const legajo = document.getElementById("legajo").value;
+            const clave = document.getElementById("clave").value;
+
+            // Verifica si los campos no están vacíos
+            if (!legajo || !clave) {
+                alert("Por favor ingresa el legajo y la clave.");
+                return;
+            }
+
+            try {
+                // Configura la solicitud POST a la API
+                const response = await fetch("https://localhost:7090/api/Persona/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    mode: "cors", // Asegúrate de usar 'cors' explícitamente
+                    body: JSON.stringify({ legajo, clave })
+                });
+
+                // Verifica si la respuesta fue exitosa
+                if (response.ok) {
+                    const data = await response.json();
+
+                    // Verifica si la respuesta contiene datos de login
+                    if (data && data.data) {
+                        const loginResponse = data.data; // Aquí obtenemos el objeto `LoginResponse` dentro de "data"
+
+                        // Almacena el token y el idPersona en el localStorage (o en cookies, según tu preferencia)
+                        localStorage.setItem("Token", loginResponse.token);
+                        localStorage.setItem("IdPersona", loginResponse.idPersona);
+
+                        // Redirige según el tipo de persona
+                        switch (loginResponse.tipo) {
+                            case "Alumno":
+                                window.location.href = "/Alumno/HomeAlumno"; // Redirige al home de Alumno
+                                break;
+                            case "Docente":
+                                window.location.href = "/Docente/HomeDocente"; // Redirige al home de Docente
+                                break;
+                            case "NoDocente":
+                                window.location.href = "/NoDocente/HomeNoDocente"; // Redirige al home de NoDocente
+                                break;
+                            default:
+                                alert("Tipo de usuario no reconocido.");
+                                break;
+                        }
+                    } else {
+                        alert("Error al iniciar sesión. Vuelve a intentarlo.");
+                    }
+                } else {
+                    alert("Error al conectar con el servidor.");
+                }
+            } catch (error) {
+                alert("Ocurrió un error al procesar tu solicitud: " + error.message);
+            }
+        });
+    </script>
+
+</body>
+</html>

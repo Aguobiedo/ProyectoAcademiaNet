@@ -1,0 +1,128 @@
+﻿@page
+@model AcademiaWeb.Pages.Alumno.CursosModel
+@{
+    ViewData["Title"] = "Cursos";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Cursos</title>
+    <link rel="stylesheet" href="~/css/Cursos.css" />
+</head>
+<body>
+    <div class="header">
+        <h1>Mis iscripciones</h1>
+        <button id="volverAlMenu" onclick="volverMenu()">Volver</button>
+
+    </div>
+    <table id="tblInscripciones">
+        <thead>
+            <tr>
+                <th>Id Inscripción</th>
+                <th>Fecha Inscripción</th>
+                <th>Condición</th>
+                <th>Nota</th>
+                <th>Materia</th>
+                <th>Comisión</th>
+                <th>Persona</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <button id="inscripcionCurso" onclick="window.location.href='/Alumno/InscripcionCurso'">Inscribirse a un curso</button>
+    <script>
+
+        function volverMenu() {
+            window.location.href = '/Alumno/HomeAlumno';
+        }
+
+        async function fetchInscripciones() {
+            const idPersona = localStorage.getItem('IdPersona');
+            const token = localStorage.getItem('Token');
+
+            try {
+                // Obtener inscripciones del alumno
+                const inscripcionesResponse = await fetch(`https://localhost:7090/api/AlumnoInscripcion/persona/${idPersona}`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (!inscripcionesResponse.ok) {
+                    throw new Error('No se pudo obtener las inscripciones');
+                }
+
+                const inscripciones = await inscripcionesResponse.json();
+                const tbody = document.getElementById('tblInscripciones').getElementsByTagName('tbody')[0];
+
+                for (const inscripcion of inscripciones) {
+                    // Obtener detalles del curso
+                    const cursoResponse = await fetch(`https://localhost:7090/api/Curso/${inscripcion.idCurso}`, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+
+                    if (!cursoResponse.ok) {
+                        console.error(`No se encontraron datos para el curso con ID: ${inscripcion.idCurso}`);
+                        continue;
+                    }
+
+                    const cursoData = await cursoResponse.json();
+                    const materiaDesc = cursoData.materia?.descMateria || "Sin asignar";
+                    const comisionDesc = cursoData.comision?.descComision || "Sin asignar";
+
+                    // Crear fila en la tabla
+                    const row = tbody.insertRow();
+                    row.insertCell().textContent = inscripcion.idInscripcion;
+                    row.insertCell().textContent = new Date(inscripcion.fechaInscripcion).toLocaleDateString();
+                    row.insertCell().textContent = inscripcion.condicion || "N/A";
+                    row.insertCell().textContent = inscripcion.nota || "N/A";
+                    row.insertCell().textContent = materiaDesc;
+                    row.insertCell().textContent = comisionDesc;
+                    row.insertCell().textContent = `${inscripcion.persona?.nombre || "N/A"} ${inscripcion.persona?.apellido || "N/A"}`;
+
+                    // Botón para eliminar inscripción
+                    const deleteCell = row.insertCell();
+                    const deleteButton = document.createElement('button');
+                    deleteButton.textContent = 'Eliminar';
+                    deleteButton.addEventListener('click', async () => {
+                        if (confirm('¿Está seguro de que desea eliminar esta inscripción?')) {
+                            try {
+                                const deleteResponse = await fetch(`https://localhost:7090/api/AlumnoInscripcion/${inscripcion.idInscripcion}`, {
+                                    method: 'DELETE',
+                                    headers: {
+                                        'Authorization': `Bearer ${token}`
+                                    }
+                                });
+
+                                if (deleteResponse.ok) {
+                                    row.remove();
+                                    alert('Inscripción eliminada correctamente.');
+                                } else {
+                                    alert('Error al eliminar la inscripción.');
+                                }
+                            } catch (error) {
+                                console.error('Error al eliminar la inscripción:', error);
+                                alert('Ha ocurrido un error. Intente nuevamente.');
+                            }
+                        }
+                    });
+                    deleteCell.appendChild(deleteButton);
+                }
+            } catch (error) {
+                console.error('Error al cargar inscripciones:', error);
+                alert('No se pudieron cargar las inscripciones. Por favor, intente nuevamente.');
+            }
+        }
+
+        fetchInscripciones();
+    </script>
+</body>
+</html>
